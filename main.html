@@ -10,6 +10,8 @@
     <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
     <py-env>
         - pandas
+        - path
+            - ./main.py
     </py-env>
 </head>
 <body>
@@ -26,6 +28,7 @@
         csv.write(df.shape)
 
     </py-script> -->
+    <py-script src="./main.py"></py-script>
     <main class="container">
         <div>
             <input 
@@ -37,5 +40,6 @@
         </div>
         <div id="result"></div>
     </main>
+
 </body>
 </html>
