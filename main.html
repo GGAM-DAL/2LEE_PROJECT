@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <py-env>
+        - pandas
+    </py-env>
+</head>
+<body>
+    <!-- <p id="csv"></p>
+    <py-script>
+        import pandas as pd
+        from pyodide.http import open_url
+        
+        url1 = open_url("https://github.com/GGAM-DAL/2LEE_PROJECT/blob/c311f7ef8805658141787749db9dd70b93091b02/population.csv")
+        df = pd.read_csv(url1, encoding='utf-8')
+        print(df)
+        
+        csv = Element('csv')
+        csv.write(df.shape)
+
+    </py-script> -->
+    <main class="container">
+        <div>
+            <input 
+                type="text"
+                id="region_input"
+                placeholder="Input the Region"
+                autofocus>
+            <button id="add_todo" pys-onClick="plot1">Search</button>
+        </div>
+        <div id="result"></div>
+    </main>
+</body>
+</html>
