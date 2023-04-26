@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>happy</title>
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <py-env>
+    - numpy
+    - pandas
+    - matplotlib
+    - path:
+        - /LEJ_PY.py
+    </py-env>
+</head>
+<body>
+    <div id="plot"></div>
+    <py-script src="LEJ_PY.py"></py-script>
+    <main class="container">
+        <div>
+            <input 
+                type="text"
+                id="region_input"
+                placeholder="Input the Region"
+                autofocus>
+            <button id="add_todo" pys-onClick="plot1">Search</button>
+        </div>
+    </main>
+</body>
+</html>
