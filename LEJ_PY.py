@@ -14,7 +14,7 @@ def chart(df, region, year):
 
 region_input = Element("region_input")
 def plot1():
-    region = region_input.value
+    region = region_input
     url1 = "https://raw.githubusercontent.com/GGAM-DAL/2LEE_PROJECT/main/population.csv"
     df = pd.read_csv(url1, encoding='cp949')
     df.set_index('자치구', drop=True,inplace=True)
