@@ -7,25 +7,52 @@
     <title>happy</title>
     <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css" />
     <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
-    <py-env>
-    - numpy
-    - pandas
-    - matplotlib
-    - path:
-        - ./LEJ_PY.py
-    </py-env>
 </head>
 <body>
-    <py-script src="./LEJ_PY.py"></py-script>
-    <main class="container">
-        <div>
-            <input 
-                type="text"
-                id="region_input"
-                placeholder="Input the Region"
-                autofocus>
-            <button id="add_todo" pys-onClick="plot1">Search</button>
-        </div>
-    </main>
+
+    <h3>지역을 선택해주세요</h3>
+    <form onsubmit="return false">
+        <label for="Select Region"></label>
+        <select name="region" id="select_region">
+            <option value="종로구">종로구</option>
+            <option value="강남구">강남구</option>
+            <option value="강동구">강동구</option>
+            <option value="강서구">강서구</option>
+            <option value="강동구">강동구</option>
+            <option value="서초구">서초구</option>
+        </select>
+        <input type="submit" pys-onClick="plot1" value="submit" id="bnt">
+    </form>
+    <br><hr>
+    <p id="result"></p>
+    <br>
+    <py-config>
+        packages = ['pandas','matplotlib']
+    </py-config>
+    <py-script>
+        def plot1(*args, **kwargs):
+            import pandas as pd
+
+            url1 = open_url("https://raw.githubusercontent.com/GGAM-DAL/2LEE_PROJECT/main/population.csv")
+            df = pd.read_csv(url1, encoding='cp949')
+        <!-- df.set_index('자치구', drop=True,inplace=True) -->
+            region = Element("select_region").value
+            result = Element("result")
+            result.write('df.head()')
+<!-- 
+            p1 = df[df['유형']=='장애인구'].loc[region, '2013']
+            p2 = df[df['유형']=='비장애인구'].loc[region, '2013'] -->
+            
+            
+            <!-- plt.pie([p1, p2], ['장애인구','비장애인구'],
+                    autopct='%.3f%%',
+                    startangle=10,
+                    colors=['#993399','#DCDCDC'],
+                    textprops={'size':15, 'color':'white', 'weight':'bold'})
+            plt.axis('off')
+            plt.figure()
+            Element("result").display(plt) -->
+
+    </py-script>
 </body>
 </html>
