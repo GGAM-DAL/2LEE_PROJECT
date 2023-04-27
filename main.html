@@ -10,7 +10,8 @@
     <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
     <py-env>
         - pandas
-        - path
+        - matplotlib
+        - path:
             - ./main.py
     </py-env>
 </head>
@@ -21,7 +22,7 @@
         from pyodide.http import open_url
         
         url1 = open_url("https://github.com/GGAM-DAL/2LEE_PROJECT/blob/c311f7ef8805658141787749db9dd70b93091b02/population.csv")
-        df = pd.read_csv(url1, encoding='utf-8')
+        df = pd.read_csv(url1, encoding='cp949')
         print(df)
         
         csv = Element('csv')
