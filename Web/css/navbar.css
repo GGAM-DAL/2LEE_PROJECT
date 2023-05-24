@@ -1,0 +1,63 @@
+/* navbar.css */
+@media screen and (max-width: 1000px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0;
+    }
+}
+:root {
+    --text-color: white;
+    --background-color: #263343;
+    --accent-color: orange;
+    --icons-color: rgb(152, 187, 201);
+    --bodybackground-color: lightgray;
+}
+body { 
+    margin: 0;
+    background-color: var(--bodybackground-color);
+    font-family: 'STIX Two Math';
+} 
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+p {
+    padding-left: 15px;
+    text-decoration: none;
+    color: var(--text-color);
+}
+.logo {
+    background-color: white;
+    border-radius: 10px;
+}
+.title {
+    display: flex;
+    margin: 0;
+    padding-left: 0;
+    font-size: 20px;
+    font-weight: 800;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--background-color);
+    padding: 20px 12px;
+    font-family: 'STIX Two Math';
+}
+.navbar_menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding-right: 0;
+    font-weight: 800;
+}
+.navbar_menu li {
+    padding: 8px 30px;
+}
+.navbar_menu li:hover {
+    background-color: var(--accent-color);
+    border-radius: 3px;
+    font-weight: 800;
+}
