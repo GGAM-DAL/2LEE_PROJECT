@@ -27,10 +27,6 @@ p {
     text-decoration: none;
     color: var(--text-color);
 }
-.logo {
-    background-color: white;
-    border-radius: 10px;
-}
 .title {
     display: flex;
     margin: 0;
